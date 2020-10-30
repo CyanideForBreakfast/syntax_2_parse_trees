@@ -184,20 +184,10 @@ bool isAssignment(Parse_Tree *statement);
 int findDeclaredType(Parse_Tree *declaration);
 Parse_Tree *findIdentifierList(Parse_Tree *declaration);
 
-int sizeJaggedArray(Parse_Tree *declaration);
 void insertPrimitiveInTable(Parse_Tree *identifier_list, int type);
 void insertArrayInTable(Parse_Tree *identifier_list, int type, int line_num, Parse_Tree *statements);
 
-Parse_Tree *findEnumList(Parse_Tree *declaration_statement);
-bool isStaticEnum(Parse_Tree *enum_list);
-Range calculateStaticLimits(Parse_Tree *enum_list);
-int errorJaggedArray(Parse_Tree *statement_list, int line_num);
-Error checkAssignment(Parse_Tree *assignment);
-typeExpression findType(Parse_Tree *identifier);
-bool inBounds(Parse_Tree *static_array_identifier);
-
-Error verifyExpression(Parse_Tree *expression, typeExpression left_type);
-Error verifyTerm(Parse_Tree *term, typeExpression type);
+void checkAssignment(Parse_Tree *assignment);
 // Traverse helpers end
 
 #endif
